@@ -4,6 +4,8 @@
  */
 package fileintegrityapp;
 
+import javax.swing.JFileChooser;
+import java.io.File;
 /**
  *
  * @author ciara
@@ -14,7 +16,12 @@ public class FileIntegrityApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        JFileChooser fileChooser = new JFileChooser();
+        int result = fileChooser.showOpenDialog(null);
+        if(result == JFileChooser.APPROVE_OPTION){
+            File selectedFile = fileChooser.getSelectedFile();
+            System.out.println("Selected File: "+selectedFile.getName());
+        }
     }
     
 }
